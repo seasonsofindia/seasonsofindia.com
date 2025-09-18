@@ -97,3 +97,40 @@ Works on all modern browsers including:
 - Optimized images
 - Fast loading times
 - CDN-ready assets
+
+## ⚠️ Windows PowerShell troubleshooting
+
+If you see an error like:
+
+```
+File C:\Program Files\nodejs\npm.ps1 cannot be loaded. The file C:\Program Files\nodejs\npm.ps1 is not digitally signed.
+You cannot run this script on the current system.
+```
+
+This is a Windows PowerShell execution policy restriction that blocks the `npm` wrapper script (`npm.ps1`). It commonly appears when running `npm` in PowerShell and can make `npm run` fail even though the project is intact.
+
+Permanent fixes and safe workarounds:
+
+- Recommended (change PowerShell policy for current user):
+
+   1. Open PowerShell as your user (not Administrator) and run:
+
+       ```powershell
+       Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
+       ```
+
+       This allows locally created scripts and signed remote scripts to run for your user account only. It is safe for development machines and avoids lowering system-wide security.
+
+- Alternative (use the `npm.cmd` shim instead of `npm` inside PowerShell):
+
+   - Run commands with `npm.cmd` (for example `npm.cmd install`, `npm.cmd run dev`) — this bypasses the PowerShell wrapper and works without changing policy.
+
+- Even better: use a Node version manager (recommended) such as `nvm-windows` so Node and npm are installed per-user and manage PATH cleanly.
+
+Notes and tips:
+
+- After changing the policy, close and reopen PowerShell.
+- To check your current policy run: `Get-ExecutionPolicy -List`.
+- Only change execution policy if you understand the implications; `RemoteSigned` for `CurrentUser` is a reasonable, low-risk setting for development.
+
+If you're still stuck after applying one of these fixes, run `npm.cmd run dev` from the project folder and paste the full terminal output here so I can help further.
