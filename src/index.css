@@ -1,0 +1,132 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+    --primary: 40 100% 42%; /* Golden #c79810 */
+    --primary-foreground: 210 40% 98%;
+    --secondary: 40 75% 93%; /* Light golden #faedd9 */
+    --secondary-foreground: 222.2 84% 4.9%;
+    --muted: 40 75% 93%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+    --accent: 40 100% 50%; /* Brighter golden for accents */
+    --accent-foreground: 222.2 84% 4.9%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 40 100% 42%;
+    --chart-1: 12 76% 61%;
+    --chart-2: 173 58% 39%;
+    --chart-3: 197 37% 24%;
+    --chart-4: 43 74% 66%;
+    --chart-5: 27 87% 67%;
+    --radius: 0.5rem;
+    
+  /* Animations */
+  --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  
+  /* Legacy restaurant colors */
+  --restaurant-primary: 40 100% 42%; /* #c79810 */
+  --restaurant-light: 40 75% 93%; /* #faedd9 */
+  --restaurant-dark: 222 54% 11%; /* #0F172B */
+  }
+
+  .dark {
+    --background: 222 54% 11%; /* Dark background */
+    --foreground: 210 40% 98%;
+    --card: 222 54% 11%;
+    --card-foreground: 210 40% 98%;
+    --popover: 222 54% 11%;
+    --popover-foreground: 210 40% 98%;
+    --primary: 40 100% 42%; /* Keep golden primary */
+    --primary-foreground: 222 54% 11%;
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+    --accent: 40 100% 50%;
+    --accent-foreground: 222 54% 11%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 40 100% 42%;
+    --chart-1: 220 70% 50%;
+    --chart-2: 160 60% 45%;
+    --chart-3: 30 80% 55%;
+    --chart-4: 280 65% 60%;
+    --chart-5: 340 75% 55%;
+  }
+}
+
+@layer components {
+  /* Rotating hero image animation - matches legacy imgRotate */
+  .animate-rotate-slow {
+    animation: imgRotate 50s linear infinite;
+  }
+  
+  @keyframes imgRotate { 
+    100% { 
+      transform: rotate(360deg); 
+    } 
+  }
+  
+  /* Legacy rotate animation for backward compatibility */
+  .rotate-slow {
+    animation: rotate 50s linear infinite;
+  }
+  
+  @keyframes rotate {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+  
+  /* Hero gradient background */
+  .hero-gradient {
+    background: linear-gradient(rgba(15, 23, 43, 0.9), rgba(15, 23, 43, 0.9));
+  }
+  
+  /* Sticky navbar transition */
+  .navbar-transition {
+    transition: all 0.5s ease;
+  }
+  
+  /* Legacy navbar styling to match original */
+  @media (min-width: 992px) {
+    .navbar-dark {
+      position: absolute;
+      width: 100%;
+      top: 0;
+      left: 0;
+      z-index: 999;
+      background: transparent !important;
+    }
+    
+    .sticky-top.navbar-dark {
+      position: fixed;
+      background: var(--restaurant-dark) !important;
+    }
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+}
