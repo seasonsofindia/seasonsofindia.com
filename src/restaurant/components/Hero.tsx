@@ -17,7 +17,7 @@ export const Hero = () => {
           <div className="text-center lg:text-left">
             <h1 className="text-4xl lg:text-6xl font-bold text-white mb-6 animate-fade-in">
               Enjoy Our<br />
-              <span style={{ color: '#c79810' }}>Delicious Meal</span>
+              <span style={{ color: '#c79810ff' }}>Delicious Meal</span>
             </h1>
             <p className="text-white/90 text-lg mb-8 max-w-lg animate-fade-in">
               We offer a culinary journey through the vibrant spices and seasonal 
@@ -29,7 +29,7 @@ export const Hero = () => {
               asChild 
               size="lg" 
               className="text-lg px-8 py-4 animate-fade-in"
-              style={{ backgroundColor: '#c79810', color: 'white' }}
+              style={{ backgroundColor: '#c79810ff', color: 'white' }}
             >
               <a
                 href="https://seasonsofindia.square.site/?shipping=true#YVGE5YBK5UQJYSA5ZASSZTLS"

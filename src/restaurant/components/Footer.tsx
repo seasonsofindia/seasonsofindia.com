@@ -1,3 +1,4 @@
+import { MapPin, Phone, Smartphone, Mail  } from "lucide-react";
 export const Footer = () => {
   return (
     <footer className="bg-restaurant-dark text-restaurant-light py-12">
@@ -16,10 +17,27 @@ export const Footer = () => {
           
           <div>
             <h3 className="text-lg font-semibold mb-4" style={{ color: '#c79810' }}>Contact Info</h3>
-            <div className="space-y-2 text-sm">
-              <p>123 Main Street, Orlando, FL 32801</p>
-              <p>Phone: <a href="tel:407-203-8552" className="hover:underline">(407) 203-8552</a></p>
-              <p>Email: info@seasonsofindia.com</p>
+            {/* Layout: each row is a flex container so the icon and the text sit on the same line */}
+            <div className="space-y-3 text-sm">
+              <div className="flex items-start gap-3">
+                <MapPin className="h-5 w-5 text-restaurant-primary mt-1" aria-hidden="true" />
+                <p className="leading-tight">7085 S Orange Blossom Trail, Orlando, FL 32809</p>
+              </div>
+
+              <div className="flex items-center gap-3">
+                <Phone className="h-5 w-5 text-restaurant-primary" aria-hidden="true" />
+                <p className="leading-tight"><a href="tel:407-203-8552" className="hover:underline">(407) 203-8552</a></p>
+              </div>
+
+              <div className="flex items-center gap-3">
+                <Smartphone className="h-5 w-5 text-restaurant-primary" aria-hidden="true" />
+                <p className="leading-tight"><a href="tel:689-242-4441" className="hover:underline">(689) 242-4441</a></p>
+              </div>
+
+              <div className="flex items-center gap-3">
+                <Mail className="h-5 w-5 text-restaurant-primary" aria-hidden="true" />
+                <p className="leading-tight">Email: <a href="mailto:seasonsofindia17@gmail.com" className="hover:underline">seasonsofindia17@gmail.com</a></p>
+              </div>
             </div>
           </div>
           
@@ -33,7 +51,7 @@ export const Footer = () => {
         </div>
         
         <div className="border-t border-restaurant-light/20 mt-8 pt-8 text-center text-sm">
-          <p>&copy; 2024 Seasons of India. All rights reserved.</p>
+          <p>&copy; 2025 Seasons of India. All rights reserved.</p>
         </div>
       </div>
     </footer>
