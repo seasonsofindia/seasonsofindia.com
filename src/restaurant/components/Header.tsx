@@ -37,7 +37,7 @@ export const Header = () => {
               src="/assets/logo.png"
               alt="Seasons of India"
               className={`transition-all duration-500 ${
-                isScrolled ? "h-20" : "h-25 sm:h30 md:h-35 lg:h-40 xl:h-50"
+                isScrolled ? "h-20" : "h-20 sm:h30 md:h-35 lg:h-40 xl:h-50"
               }`}
             />
           </div>
