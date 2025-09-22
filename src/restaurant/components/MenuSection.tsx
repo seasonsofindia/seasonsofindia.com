@@ -11,13 +11,15 @@ import {
   Dessert, 
   Vegan ,
   UtensilsCrossed,
-  Salad
+  Salad,
+  ChefHat
 } from "lucide-react";
 
 const menuCategories = [
+  { id: "chefSpecial", label: "Chef Special", icon: ChefHat},
   { id: "thali", label: "Thali", icon: UtensilsCrossed },
   { id: "soups", label: "Soups & Drinks", icon: Coffee },
-  { id: "streetfood", label: "Street Food", icon: Salad },
+  { id: "lightfood", label: "Light Food", icon: Salad },
   { id: "appetizers", label: "Appetizers", icon: Utensils },
   { id: "entrees", label: "Entrées", icon: Soup },
   { id: "ricenoodles", label: "Rice & Noodles", icon: Wheat },
@@ -102,7 +104,7 @@ const menuItems = {
       tags: ["Fresh", "Cold"]
     }
   ],
-  streetfood: [
+  lightfood: [
     {
       name: "Pani Puri (6pcs)",
       price: "",
@@ -395,10 +397,12 @@ export const MenuSection = () => {
   const [activeTab, setActiveTab] = useState("thali");
 
   return (
-    <section id="menu" className="py-20 bg-gray-50">
+    // Reduced vertical padding to tighten spacing with adjacent sections
+    // Keep top spacing but reduce bottom spacing to bring Contact section closer
+    <section id="menu" className="pt-12 pb-6 bg-gray-50">
       <div className="container mx-auto px-4">
         {/* Header with contact info */}
-        <div className="text-center mb-12">
+        <div className="text-center mb-8">
           <div className="flex flex-col sm:flex-row justify-center items-center gap-4 mb-6">
             <a 
               href="tel:407-203-8552" 
@@ -423,7 +427,7 @@ export const MenuSection = () => {
         </div>
 
         <Tabs value={activeTab} onValueChange={setActiveTab} className="w-full">
-          <TabsList className="items-center justify-center rounded-md text-muted-foreground grid grid-cols-4 lg:grid-cols-9 mb-9 h-auto p-1 bg-gray-100">
+          <TabsList className="items-center justify-center rounded-md text-muted-foreground grid grid-cols-4 lg:grid-cols-10 mb-4 h-auto p-1 bg-gray-100">
             {menuCategories.map((category) => {
               const IconComponent = category.icon;
               return (
@@ -439,9 +443,29 @@ export const MenuSection = () => {
             })}
           </TabsList>
 
+          {/**
+           * Small contextual message area. Shows different messages depending on the
+           * currently selected tab (activeTab). This sits between the tab list and
+           * the tab content so it remains visible while switching categories.
+           */}
+          {/* Only show contextual messages for tabs other than desserts/thali/chefSpecial */}
+          {!["desserts", "thali", "chefSpecial"].includes(activeTab) && (
+            <div className="mx-auto max-w-3xl mb-6">
+              {activeTab === "soups" ? (
+                <div className="rounded-md bg-amber-50 border border-amber-200 p-3 text-amber-800 text-center text-sm">
+                  Beer and Wine Selection available.
+                </div>
+              ) : (
+                <div className="rounded-md bg-slate-50 border border-slate-200 p-3 text-slate-700 text-center text-sm">
+                  Please specify level of spiciness: Mild🌶️ Medium🌶️🌶️ Hot🌶️🌶️🌶️ Extra Hot🌶️🌶️🌶️🌶️
+                  </div>
+              )}
+            </div>
+          )}
+
           {menuCategories.map((category) => (
             <TabsContent key={category.id} value={category.id}>
-              <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
+              <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
                 {menuItems[category.id]?.map((item, index) => (
                   <Card key={index} className="hover:shadow-lg transition-shadow h-full">
                     <CardContent className="p-6 flex flex-col h-full">

@@ -21,7 +21,7 @@ export const Footer = () => {
             <div className="space-y-3 text-sm">
               <div className="flex items-start gap-3">
                 <MapPin className="h-5 w-5 text-restaurant-primary mt-1" aria-hidden="true" />
-                <p className="leading-tight">7085 S Orange Blossom Trail, Orlando, FL 32809</p>
+                <p className="leading-tight"><a href="https://www.google.com/maps/place/Seasons+of+India/@28.5425405,-81.4104685,17z/data=!3m1!4b1!4m6!3m5!1s0x88e77b88433438d7:0xf326c20606a96600!8m2!3d28.5425358!4d-81.4078936!16s%2Fg%2F11t57mxd85?entry=ttu" className="hover:underline" target="_blank">7085 S Orange Blossom Trail, Orlando, FL 32809</a></p>
               </div>
 
               <div className="flex items-center gap-3">
@@ -36,7 +36,7 @@ export const Footer = () => {
 
               <div className="flex items-center gap-3">
                 <Mail className="h-5 w-5 text-restaurant-primary" aria-hidden="true" />
-                <p className="leading-tight">Email: <a href="mailto:seasonsofindia17@gmail.com" className="hover:underline">seasonsofindia17@gmail.com</a></p>
+                <p className="leading-tight"><a href="mailto:seasonsofindia17@gmail.com" className="hover:underline">seasonsofindia17@gmail.com</a></p>
               </div>
             </div>
           </div>

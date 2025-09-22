@@ -2,7 +2,8 @@ import { Button } from "@/components/ui/button";
 
 export const Hero = () => {
   return (
-    <section id="home" className="relative min-h-screen flex items-center">
+    // Reduced min-height and top padding to tighten gap under header
+    <section id="home" className="relative min-h-[80vh] flex items-center">
       {/* Background Image with Dark Overlay */}
       <div 
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
@@ -11,7 +12,7 @@ export const Hero = () => {
         }}
       />
       
-      <div className="container mx-auto px-4 relative z-10 pt-32 sm:pt-40 md:pt-48 lg:pt-56">
+  <div className="container mx-auto px-4 relative z-10 pt-20 sm:pt-24 md:pt-28 lg:pt-32">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Text Content */}
           <div className="text-center lg:text-left">

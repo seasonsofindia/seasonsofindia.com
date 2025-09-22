@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
-import { Menu, X } from "lucide-react";
+import { Menu, X, ChevronDown, ChevronUp } from "lucide-react";
 
 export const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -30,7 +30,8 @@ export const Header = () => {
       }`}
     >
       <div className="container mx-auto px-4 lg:px-8">
-        <div className="flex items-center justify-between py-3">
+  {/* Removed vertical padding to minimize navbar height; menu item sizes unchanged */}
+  <div className="flex items-center justify-between py-0">
           {/* Logo */}
           <div className="flex-shrink-0">
             <img
@@ -58,7 +59,7 @@ export const Header = () => {
             </button>
             <div className="relative group">
               <button className="text-restaurant-light hover:text-primary transition-colors uppercase font-medium text-sm">
-                More
+                More 
               </button>
               <div className="absolute top-full left-0 mt-2 w-48 bg-restaurant-dark shadow-lg rounded-md opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50">
                 <a
@@ -76,6 +77,14 @@ export const Header = () => {
                   className="block px-4 py-2 text-sm text-restaurant-light hover:text-primary transition-colors"
                 >
                   Carry-out Menu
+                </a>
+                <a
+                  href="https://sites.google.com/view/seasonsofindia-menuimages"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="block px-4 py-2 text-sm text-restaurant-light hover:text-primary transition-colors"
+                >
+                  Catering Menu
                 </a>
               </div>
             </div>
@@ -139,6 +148,10 @@ export const Header = () => {
               >
                 Call: (407) 203-8552
               </a>
+              {/* Mobile 'More' toggle and links */}
+              <div className="border-t border-white/5 mt-1 pt-2">
+                <MobileMore />
+              </div>
               <div className="px-3 py-2">
                 <Button asChild className="w-full bg-primary hover:bg-primary/90">
                   <a
@@ -155,5 +168,51 @@ export const Header = () => {
         )}
       </div>
     </nav>
+  );
+};
+
+// Small mobile-only component to expose the 'More' links in the mobile menu
+const MobileMore = () => {
+  const [open, setOpen] = useState(false);
+
+  return (
+    <div>
+      <button
+        onClick={() => setOpen(!open)}
+        className="w-full flex items-center justify-between px-3 py-2 text-restaurant-light hover:text-primary transition-colors uppercase font-medium text-sm"
+      >
+        <span>More</span>
+        {open ? <ChevronUp className="h-4 w-4" /> : <ChevronDown className="h-4 w-4" />}
+      </button>
+
+      {open && (
+        <div className="mt-1 space-y-1">
+          <a
+            href="https://sites.google.com/view/seasonsofindia-menuimages"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="block px-4 py-2 text-sm text-restaurant-light hover:text-primary transition-colors"
+          >
+            Gallery
+          </a>
+          <a
+            href="https://sites.google.com/view/seasonsofindia-menuimages"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="block px-4 py-2 text-sm text-restaurant-light hover:text-primary transition-colors"
+          >
+            Carry-out Menu
+          </a>
+          <a
+            href="https://sites.google.com/view/seasonsofindia-menuimages"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="block px-4 py-2 text-sm text-restaurant-light hover:text-primary transition-colors"
+          >
+            Catering Menu
+          </a>
+        </div>
+      )}
+    </div>
   );
 };

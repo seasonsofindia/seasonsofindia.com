@@ -10,7 +10,8 @@
     --card-foreground: 222.2 84% 4.9%;
     --popover: 0 0% 100%;
     --popover-foreground: 222.2 84% 4.9%;
-    --primary: 40 100% 42%; /* Golden #c79810 */
+  /* Primary color: hex #c79810 (opaque). Converted to HSL ≈ 45 85% 42% */
+  --primary: 45 85% 42%; /* #c79810 */
     --primary-foreground: 210 40% 98%;
     --secondary: 40 75% 93%; /* Light golden #faedd9 */
     --secondary-foreground: 222.2 84% 4.9%;
@@ -34,7 +35,7 @@
   --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   
   /* Legacy restaurant colors */
-  --restaurant-primary: 40 100% 42%; /* #c79810 */
+  --restaurant-primary: 45 85% 42%; /* #c79810 */
   --restaurant-light: 40 75% 93%; /* #faedd9 */
   --restaurant-dark: 222 54% 11%; /* #0F172B */
   }
