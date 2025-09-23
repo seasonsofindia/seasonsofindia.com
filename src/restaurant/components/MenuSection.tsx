@@ -145,7 +145,7 @@ const menuItems = {
       price: "",
       description: "Crispy potato bowl with fillings divine, Chickpeas, yogurt, and chutneys combined",
       subcategory: "Chaat/ Street Food",
-      tags: ["Street Food", "Popular", "Vegetarian"]
+      tags: ["Street Food", "Popular", "Vegetarian", "Tiffin"]
     },
     {
       name: "Idli (3Pcs) (Plain/Ghee)",
@@ -155,39 +155,53 @@ const menuItems = {
       tags: ["Popular", "Vegan"]
     },
     {
-      name: "Delhi Samosa Chaat",
-      price: "",
-      description: "Crispy, spicy delight, drenched in chutneys, a flavor-filled bite.",
-      subcategory: "Chaat/ Street Food",
-      tags: ["Street Food", "Popular", "Vegetarian"]
+      name: "Utthapam/ Onion Utthapam",
+      price: "12",
+      description: "Rice and lentils, ground to a paste, onions, cumin, with spices to taste, uttapam cooks, a breakfast so great.",
+      subcategory: "South Indian",
+      tags: ["Street Food", "Vegetarian", "Tiffin"]
     },
     {
-      name: "Mumbai Vada Pav",
-      price: "",
-      description: "Spiced potato, green chili’s heat, Mumbai’s vada pav—street food elite.",
-      subcategory: "Chaat/ Street Food",
-      tags: ["Street Food", "Popular", "Vegan"]
+      name: "Dosa (Plain / Onion / Masala / Cheese Masala / Ghee )",
+      price: "12",
+      description: "Rice and lentils, soaked and ground, fermented batter, rising unbound, dosa crisps, golden and browned, Served with sambar and chutney, flavor unbound.",
+      subcategory: "South Indian",
+      tags: ["Street Food", "Popular", "Vegetarian", "Tiffin"]
     },
     {
-      name: "Uttar se Palak Chaat",
-      price: "",
-      description: "Crisp spinach leaves, golden and fried, Topped with yogurt, chutney, and sprinkled spices, a flavorful delight.",
-      subcategory: "Chaat/ Street Food",
-      tags: ["Street Food", "Popular", "Vegetarian"]
+      name: "Spring Dosa",
+      price: "13",
+      description: "Spring dosa, crispy and light, stuffed with veggies, a flavorful bite.",
+      subcategory: "South Indian",
+      tags: ["Street Food", "Vegetarian", "Tiffin"]
     },
     {
-      name: "Kaarakhaana Pav Bhaji",
-      price: "",
-      description: "Soft buttered rolls with spiced veggie blend, A divine treat your soul will commend.",
-      subcategory: "Chaat/ Street Food",
-      tags: ["Street Food", "Popular", "Vegan"]
+      name: "500 MM Dosa",
+      price: "16",
+      description: "A 500mm giant dosa, crispy and wide, with potatoes, spices, and chutney inside.",
+      subcategory: "South Indian",
+      tags: ["Street Food", "Popular", "Vegetarian", "Tiffin"]
     },
     {
-      name: "Rajasthani Katori Chaat",
-      price: "",
-      description: "Crispy potato bowl with fillings divine, Chickpeas, yogurt, and chutneys combined",
-      subcategory: "Chaat/ Street Food",
-      tags: ["Street Food", "Popular", "Vegetarian"]
+      name: "Volcano Dosa",
+      price: "15",
+      description: "Spicy volcano paneer, fiery and bold, hidden in a cone, with flavors untold.",
+      subcategory: "South Indian",
+      tags: ["Street Food", "Popular", "Vegetarian", "Tiffin"]
+    },
+    {
+      name: "Kal Dosa",
+      price: "17",
+      description: "Mini thick crepe made with fermented rice and lentil batter served with a curry of your choice.",
+      subcategory: "South Indian",
+      tags: ["Street Food", "Tiffin"]
+    },
+    {
+      name: "Egg Dosa",
+      price: "15",
+      description: "Rice and dal, blended with care, Eggs, and spices, sizzling in the air. Egg dosa cooks, a treat so rare. Served with sambar, and chutney, beyond compare.",
+      subcategory: "South Indian",
+      tags: ["Street Food", "Popular", "Tiffin"]
     }
   ],
   appetizers: [    
@@ -199,25 +213,11 @@ const menuItems = {
       tags: ["Fried", "Popular", "Vegetarian"]
     },
     {
-      name: "Chicken Tikka",
-      price: "15",
-      description: "Juicy chicken tikka, grilled just right. Spiced to perfection in every bite.",
-      subcategory: "Tandoori Appetizers",
-      tags: ["Chicken", "Grilled", "Popular"]
-    },
-    {
-      name: "Paneer Tikka",
-      price: "18",
-      description: "Indian cottage cheese, grilled with spices' embrace. Tender, flavorful in every taste.",
-      subcategory: "Tandoori Appetizers",
-      tags: ["Vegetarian", "Grilled"]
-    },
-    {
-      name: "Tandoori Shrimp",
-      price: "20",
-      description: "Tender shrimp, spiced and char-grilled with care. In a clay oven's embrace, a taste beyond compare.",
-      subcategory: "Tandoori Appetizers",
-      tags: ["Shrimp", "Grilled", "Premium"]
+      name: "Lucknow ke Pakode",
+      price: "10",
+      description: "Delicate fritters, fried golden brown, Chickpea batter, roasted spices from Lucknow’s town.",
+      subcategory: "Vegetarian Appetizers",
+      tags: ["Fried", "Popular", "Vegetarian"]
     },
     {
       name: "Canteen 65 (Gobi/Paneer/Chicken)",
@@ -246,7 +246,21 @@ const menuItems = {
       description: "Crispy wings coated in our signature sauce. A savory treat with every bite, full of gloss.",
       subcategory: "Indo-Chinese Appetizers",
       tags: ["Wings", "Signature", "Crispy"]
-    }
+    },
+    {
+      name: "Paneer Tikka",
+      price: "18",
+      description: "Indian cottage cheese, grilled with spices' embrace. Tender, flavorful in every taste.",
+      subcategory: "Tandoori Appetizers",
+      tags: ["Vegetarian", "Grilled"]
+    },
+    {
+      name: "Tandoori Shrimp",
+      price: "20",
+      description: "Tender shrimp, spiced and char-grilled with care. In a clay oven's embrace, a taste beyond compare.",
+      subcategory: "Tandoori Appetizers",
+      tags: ["Shrimp", "Grilled", "Premium"]
+    },
   ],
   entrees: [
     {
