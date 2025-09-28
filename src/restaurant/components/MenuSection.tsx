@@ -23,7 +23,7 @@ const menuCategories = [
   { id: "appetizers", label: "Appetizers", icon: Utensils },
   { id: "entrees", label: "Entrées", icon: Soup },
   { id: "ricenoodles", label: "Rice & Noodles", icon: Wheat },
-  { id: "naan", label: "Naans & Dosa", icon: EggFried },
+  { id: "naan", label: "Naans", icon: EggFried },
   { id: "desserts", label: "Desserts", icon: Dessert },
   { id: "veganjain", label: "Vegan/Jain", icon: Vegan  }
 ];
@@ -209,15 +209,50 @@ const menuItems = {
       name: "Vegetable Samosa (2pcs)",
       price: "7",
       description: "Golden samosa, filled with warmth and spice. A delicious treat in every bite.",
-      subcategory: "Vegetarian Appetizers",
+      subcategory: "Appetizers",
       tags: ["Fried", "Popular", "Vegetarian"]
     },
     {
       name: "Lucknow ke Pakode",
       price: "10",
       description: "Delicate fritters, fried golden brown, Chickpea batter, roasted spices from Lucknow’s town.",
-      subcategory: "Vegetarian Appetizers",
+      subcategory: "Appetizers",
       tags: ["Fried", "Popular", "Vegetarian"]
+    },
+    {
+      name: "Imperial Chicken / Paneer",
+      price: "15",
+      description: "Golden fried Chicken or Paneer, spiced and crisp, Tossed in minty sauce—flavors that lift.",
+      subcategory: "Appetizers",
+      tags: ["Popular"]
+    },
+    {
+      name: "Southern Chicken Vepudu",
+      price: "15",
+      description: "Tender chicken, marinated in spices’ embrace, A blend of red chilies, curry leaves, and flavor to trace.",
+      subcategory: "Appetizers",
+      tags: ["Chicken"]
+    },
+    {
+      name: "Southern Vepudu (Lamb / Goat / Shrimp)",
+      price: "18",
+      description: "Choice of Lamb, Goat, or Shrimp, simmered with onion, garlic and spice, Red chilies, curry leaves—aromatic and nice.",
+      subcategory: "Appetizers",
+      tags: ["Popular"]
+    },
+    {
+      name: "Tawa Macchi",
+      price: "18",
+      description: "Marinated fish, grilled with ginger, garlic, turmeric’s spice, Perfection on the grill—tender and nice.",
+      subcategory: "Appetizers",
+      tags: ["Popular", "Sea food"]
+    },
+    {
+      name: "Southern Chicken Vepudu",
+      price: "15",
+      description: "Tender chicken, marinated in spices’ embrace, A blend of red chilies, curry leaves, and flavor to trace.",
+      subcategory: "Appetizers",
+      tags: ["Chicken", "Grilled", "Premium"]
     },
     {
       name: "Canteen 65 (Gobi/Paneer/Chicken)",
@@ -248,11 +283,39 @@ const menuItems = {
       tags: ["Wings", "Signature", "Crispy"]
     },
     {
-      name: "Paneer Tikka",
+      name: "Paneer tikka / Coriander pesto Paneer Tikka",
       price: "18",
-      description: "Indian cottage cheese, grilled with spices' embrace. Tender, flavorful in every taste.",
+      description: "Indian cottage cheese, grilled with spices’ embrace, Tender, flavorful in every taste.",
       subcategory: "Tandoori Appetizers",
       tags: ["Vegetarian", "Grilled"]
+    },
+    {
+      name: "Malai Cheesy Broccoli",
+      price: "18",
+      description: "Tender broccoli florets cooked in Tandoor, bathed in a creamy, cheesy sauce to allure.",
+      subcategory: "Tandoori Appetizers",
+      tags: ["Vegetarian", "Grilled"]
+    },
+    {
+      name: "Lamb Chops",
+      price: "25",
+      description: "Lamb chops, marinated and seared just right, Tender, juicy, and full of spice.",
+      subcategory: "Tandoori Appetizers",
+      tags: ["Lamb", "Grilled", "Popular"]
+    },
+    {
+      name: "Chicken Tikka",
+      price: "15",
+      description: "Juicy chicken tikka, grilled just right, Spiced to perfection in every bite.",
+      subcategory: "Tandoori Appetizers",
+      tags: ["Chicken", "Grilled", "Popular"]
+    },
+    {
+      name: "Daaru Tandoori Chicken",
+      price: "15",
+      description: "Tandoor chicken, spiced and grilled just right, Pair it with your favorite alcohol for a perfect bite.",
+      subcategory: "Tandoori Appetizers",
+      tags: ["Chicken", "Grilled", "Premium"]
     },
     {
       name: "Tandoori Shrimp",
@@ -261,6 +324,20 @@ const menuItems = {
       subcategory: "Tandoori Appetizers",
       tags: ["Shrimp", "Grilled", "Premium"]
     },
+    {
+      name: "Kasuri Methi Jhinga",
+      price: "20",
+      description: "Fenugreek Shrimp, spiced and bold, Herbs’ embrace, a dish to behold.",
+      subcategory: "Tandoori Appetizers",
+      tags: ["Sea Food", "Grilled"]
+    },
+    {
+      name: "Tandoori Subzi",
+      price: "19",
+      description: "Tandoori sabzi, vibrant and charred, Yogurt-spiced, a flavorful art.",
+      subcategory: "Tandoori Appetizers",
+      tags: ["Vegetarian", "Grilled"]
+    }
   ],
   entrees: [
     {
@@ -268,7 +345,7 @@ const menuItems = {
       price: "16",
       description: "A classic Rajasthani dish of five lentils, slow-cooked with aromatic spices like cumin, turmeric, and garam masala.",
       subcategory: "Vegetarian",
-      tags: ["Lentils", "Traditional", "Rajasthani"]
+      tags: ["Lentils", "Traditional", "Vegan"]
     },
     {
       name: "Dal Bukhara",
@@ -278,108 +355,374 @@ const menuItems = {
       tags: ["Creamy", "Punjabi", "Rich"]
     },
     {
-      name: "The Buttery Chicken",
-      price: "21",
-      description: "Tender chicken cooked in a rich tomato-based sauce, enriched with butter and cream, flavored with garam masala, turmeric, and cumin.",
-      subcategory: "Non-Vegetarian",
-      tags: ["Chicken", "Creamy", "Popular"]
+      name: "Kaju Malai Methi",
+      price: "17",
+      description: "A rich, creamy curry blending the nutty sweetness of cashews, the earthy hint of fenugreek, and the smooth richness of cream.",
+      subcategory: "Vegetarian",
+      tags: ["Cashews", "Nuts", "Popular"]
     },
     {
-      name: "Paneer Butter Masala",
-      price: "18",
-      description: "Soft paneer cubes in a rich, creamy tomato-based sauce with butter and cream.",
+      name: "Shahi Kofta Masala",
+      price: "17",
+      description: "Flavorful potato and vegetable dumplings, enveloped in a creamy, velvety tomato-onion gravy. A royal treat infused with warm spices.",
+      subcategory: "Vegetarian",
+      tags: ["Creamy", "Popular"]
+    },
+    {
+      name: "Buddha’s Delight Handi",
+      price: "17",
+      description: "A vibrant and flavorful stir-fry of mixed vegetables simmered in a rich and creamy aromatic sauce.",
+      subcategory: "Vegetarian",
+      tags: ["Creamy", "Popular"]
+    },
+    {
+      name: "Gobi Musallam",
+      price: "16",
+      description: "A North Indian dish featuring whole cauliflower marinated in spiced yogurt and roasted. Served with a creamy tomato-cashew sauce, enriched with aromatic masalas.",
+      subcategory: "Vegetarian",
+      tags: ["Cauliflower", "Creamy", "Nuts", "Popular"]
+    },
+    {
+      name: "Bharwa Mirchi ka salan / Bade Mirchi ka Salan",
+      price: "16",
+      description: "A spicy Hyderabadi dish of stuffed green chilies in a tangy, nutty gravy made with roasted peanuts, sesame seeds, tamarind, and aromatic spices.",
       subcategory: "Vegetarian",
       tags: ["Paneer", "Creamy", "Popular"]
     },
     {
+      name: "Garam Dhuni Chana Masala",
+      price: "16",
+      description: "Chickpeas cooked in a rich and aromatic tomato and spice-based gravy featuring cumin, coriander, turmeric, and garam masala. Vegan-friendly option.",
+      subcategory: "Vegetarian",
+      tags: ["Chickpeas", "Vegan", "Popular"]
+    },
+    {
+      name: "Paneer Makhani",
+      price: "17",
+      description: "Cubes of paneer cooked in a luscious Onion tomato-based gravy with a blend of aromatic spices flavored with aromatic spices.",
+      subcategory: "Vegetarian",
+      tags: ["Paneer", "Creamy", "Popular"]
+    },
+    {
+      name: "Paneer Tikka Masala",
+      price: "17",
+      description: "Chunks of marinated paneer grilled with Onions and Bell peppers, then simmered in a rich, creamy tomato-based sauce.",
+      subcategory: "Vegetarian",
+      tags: ["Paneer", "Creamy", "Popular"]
+    },
+    {
+      name: "Palak Paneer",
+      price: "17",
+      description: "Indian cottage cheese cooked in a creamy spinach sauce, seasoned with spices, resulting in a rich and satisfying flavor.",
+      subcategory: "Vegetarian",
+      tags: ["Paneer", "Spinach", "Popular"]
+    },
+    {
+      name: "Chicken Kolhapuri",
+      price: "20",
+      description: "A flavorful Maharashtrian dish with rich, aromatic gravy, Made with bone-in chicken, roasted onions, and tomatoes, Flavored with a spicy blend of unique Kolhapuri masala.",
+      subcategory: "Chicken",
+      tags: ["Chicken", "Spicy", "Dairy Free", "Popular"]
+    },
+    {
+      name: "Chicken Xacuti",
+      price: "20",
+      description: "Goan curry made with tender chicken cooked in a rich, spicy blend of roasted coconut, aromatic spices, and tangy tamarind.",
+      subcategory: "Chicken",
+      tags: ["Chicken", "Dairy Free", "Popular"]
+    },
+    {
+      name: "The Buttery Chicken",
+      price: "21",
+      description: "Tender chicken cooked in a rich tomato-based sauce, enriched with butter and cream, flavored with garam masala, turmeric, and cumin.",
+      subcategory: "Chicken",
+      tags: ["Chicken", "Creamy", "Popular"]
+    }, 
+    {
+      name: "Paradise Rogan Josh (Goat/Lamb)",
+      price: "21",
+      description: "Originating from Kashmir, rich spices unfold with tender lamb or goat slow-cooked in yogurt, ginger, and bold Kashmiri spices.",
+      subcategory: "Goat-Lamb",
+      tags: ["Goat", "Dairy Free", "Popular"]
+    },
+    {
+      name: "Marwar Laal Maas",
+      price: "21",
+      description: "Traditional Rajasthani dish known for its bold flavors and rich history, succulent pieces of lamb meat, slow-cooked in a blend of spicy red chili paste, garlic, and aromatic spices.",
+      subcategory: "Lamb",
+      tags: ["Lamb", "Spicy", "Dairy Free", "Popular"]
+    },       
+    {
+      name: "Lasooni Hara Shrimp", 
+      price: "22",
+      description: "Soft, tender shrimp expertly flash-fried and coated in a bold, flavorful garlic chili sauce that delivers the perfect balance of heat and savory goodness.",
+      subcategory: "Sea Food",
+      tags: ["Shrimp", "Popular"]
+    },       
+    {
+      name: "Cheepala Pulusu", 
+      price: "22",
+      description: "A flavorful Andhra dish with fish marinated in aromatic spices, Simmered in tangy tamarind sauce for a perfect blend of heat and zest.",
+      subcategory: "Sea Food",
+      tags: ["Fish","Popular"]
+    },       
+    {
+      name: "Laziz Curry", 
+      price: "19+",
+      description: "Choice of Tender Chicken/Lamb/Goat/Shrimp/Fish simmered. Features a rich, thick sauce made with a blend of spices, herbs, and often tomatoes",
+      subcategory: "Non-Vegetarian",
+      tags: ["Chicken", "Lamb", "Goat", "Shrimp", "Fish", "Popular"]
+    },       
+    {
+      name: "Angrezi Tikka Masala", 
+      price: "20+",
+      description: "A classic Indo-British dish with a choice of marinated Chicken/Lamb/Shrimp/Fish in a velvety tomato sauce, infused with warm spices.",
+      subcategory: "Non-Vegetarian",
+      tags: ["Chicken", "Lamb", "Shrimp", "Fish", "Popular"]
+    },       
+    {
+      name: "Saag Masala", 
+      price: "19+",
+      description: "A creamy nutritious Indian dish of spinach puree and aromatic spices with a choice of chicken, lamb, goat or shrimp.",
+      subcategory: "Non-Vegetarian",
+      tags: ["Chicken", "Lamb", "Goat", "Shrimp", "Popular"]
+    },       
+    {
+      name: "The Buttery Masala", 
+      price: "19+",
+      description: "Choice of Lamb / Shrimp / Fish cooked in a rich tomato-based, enriched with butter and cream, flavored with garam masala, turmeric, and cumin for a luscious, aromatic taste.",
+      subcategory: "Non-Vegetarian",
+      tags: ["Lamb", "Shrimp","Fish", "Popular"]
+    },       
+    {
       name: "Chettinad Experience", 
       price: "19+",
-      description: "A flavorful dish from Chettinad, renowned for its bold, aromatic spices. Made with fennel, star anise, black pepper, curry leaves and your choice of protein.",
-      subcategory: "Regional",
-      tags: ["Spicy", "Choice", "Chettinad"]
+      description: "A flavorful dish from Chettinad, renowned for its bold, aromatic spices.Made with fennel, star anise, black pepper, curry leaves and your choice of Chicken/Lamb/Goat/Shrimp.",
+      subcategory: "Non-Vegetarian",
+      tags: ["Chicken", "Lamb", "Goat", "Shrimp", "Popular"]
+    },       
+    {
+      name: "Mughlai Korma", 
+      price: "19+",
+      description: "A luxurious Mughal-era dish, slow-cooked with your choice of Chicken/Lamb/Goat/Shrimp. Rich with yogurt, cream, nuts, and fragrant spices give its aromatic and creamy.",
+      subcategory: "Non-Vegetarian",
+      tags: ["Chicken", "Lamb", "Goat", "Shrimp", "Popular"]
+    },       
+    {
+      name: "Kadai Masala", 
+      price: "19+",
+      description: "A flavorful Indian dish cooked in a wok-style pan, combining fresh spices, tomatoes, onions, and bell peppers with a choice of tender Chicken/Lamb/Goat/Shrimp. Bold flavors of roasted coriander, red chilies, and tangy gravy create a rich and aromatic experience.",
+      subcategory: "Non-Vegetarian",
+      tags: ["Chicken", "Lamb", "Goat", "Shrimp", "Popular"]
+    },       
+    {
+      name: "Tangy Vindaloo", 
+      price: "19+",
+      description: "A robust, flavorful dish with a choice of Tender Chicken/Lamb/Goat/Shrimp, marinated and slow-cooked in a fiery blend of tomatoes, chilies, Potatoes, spices, and a touch of vinegar for tanginess, cooked in Goan Style.",
+      subcategory: "Non-Vegetarian",
+      tags: ["Chicken", "Lamb", "Goat", "Shrimp", "Popular"]
     }
   ],
   ricenoodles: [
     {
-      name: "Hyderabadi Chicken Dum Biryani",
-      price: "19",
-      description: "A regal feast of aromatic basmati rice, tender chicken, and exotic spices, slow-cooked to perfection.",
-      subcategory: "Biryani",
-      tags: ["Chicken", "Dum", "Popular"]
-    },
-    {
-      name: "Vegetable Biryani",
-      price: "18",
-      description: "A regal dish that combines colorful vegetables, creamy yogurt masala, aromatic spices, and fluffy basmati rice.",
-      subcategory: "Biryani",
-      tags: ["Vegetarian", "Regal"]
+      name: "Steamed Basmati Rice",
+      price: "5",
+      description: "Fragrant basmati rice, steamed to perfection, with a light and fluffy texture.",
+      subcategory: "Rice Items",
+      tags: ["Rice"]
     },
     {
       name: "Jeera Rice",
-      price: "9", 
-      description: "Fragrant basmati rice delicately infused with the earthy warmth of cumin seeds.",
-      subcategory: "Rice",
-      tags: ["Cumin", "Aromatic"]
+      price: "9",
+      description: "Fragrant basmati rice delicately infused with the earthy warmth of cumin seeds, offering a harmonious blend of aroma and flavor.",
+      subcategory: "Rice Items",
+      tags: ["Rice", "Cumin", "Aromatic"]
     },
     {
-      name: "Hakka Noodles",
+      name: "Sambar Rice",
+      price: "16",
+      description: "Experience the comforting blend of fragrant basmati rice and a robust sambar, flavorful lentil stew bursting with tangy and spicy notes.",
+      subcategory: "Rice Items",
+      tags: ["Rice", "Lentils", "Popular"]
+    },
+    {
+      name: "Avakaya Annam Pappu",
+      price: "16",
+      description: "A timeless trio of fragrant rice, tempered dal, and tangy mango pickle, a classic Andhra Pradesh comfort food that has been savored for generations.",
+      subcategory: "Rice Items",
+      tags: ["Rice", "Lentils", "Popular"]
+    },
+    {
+      name: "Paneer Mirchi Pulao",
+      price: "18",
+      description: "Aromatic basmati rice paired with spicy green chilies and tender paneer, Cooked to perfection for a harmonious blend of flavors and textures.",
+      subcategory: "Rice Items",
+      tags: ["Rice", "Paneer", "Spicy"]
+    },
+    {
+      name: "Vegetable / Kaju-Paneer Biryani",
+      price: "18",
+      description: "A regal dish that combines a vibrant mix of colorful vegetables, creamy yogurt masala, aromatic spices, and fluffy basmati rice, creating a harmonious blend of flavors and textures.",
+      subcategory: "Rice Items",
+      tags: ["Rice", "Biryani", "Popular"]
+    },
+    {
+      name: "Hyderabadi Chicken dum Biryani",
+      price: "19",
+      description: "A regal feast of aromatic basmati rice, tender chicken, and exotic spices, slow-cooked with dum setup to perfection.",
+      subcategory: "Rice Items",
+      tags: ["Rice", "Biryani", "Popular"]
+    },
+    {
+      name: "Chicken 65 / Boneless Biryani",
+      price: "20",
+      description: "Aromatic basmati rice, perfectly layered with your choice of tender Chicken 65 or boneless chicken and infused with exotic spices, slow-cooked to create the perfect comfort food.",
+      subcategory: "Rice Items",
+      tags: ["Non-Vegetarian", "Biryani", "Popular"]
+    },
+    {
+      name: "Lamb / Goat Double Masala Biryani",
+      price: "19", 
+      description: "Aromatic basmati rice, perfectly layered with tender lamb or goat, infused with a complex blend of rich spices, creating a harmonious and fragrant dish.",
+      subcategory: "Rice Items",
+      tags: ["Biryani", "Aromatic"]
+    },
+    {
+      name: "Prawn Biryani",
+      price: "22", 
+      description: "Aromatic basmati rice delicately layered with tender shrimp, infused with a flavorful blend of spices that enhances each bite with its rich, aromatic essence.",
+      subcategory: "Rice Items",
+      tags: ["Biryani", "Sea Food"]
+    },
+    {
+      name: "Tossed Fried Rice",
       price: "15+",
-      description: "Stir-fried noodles with fresh vegetables, soy sauce, and your choice of protein for a perfect Indo-Chinese experience.",
-      subcategory: "Noodles",
-      tags: ["Choice", "Indo-Chinese"]
+      description: "A classic dish featuring fragrant rice stir-fried with a medley of vegetables, Choice of vegetables, chicken, shrimp or egg as the protein creating a delicious and aromatic combination.",
+      subcategory: "Rice Items",
+      tags: ["Vegetarian", "Chicken", "Egg", "Shrimp", "Indo-Chinese"]
+    },
+    {
+      name: "Shezwan Fried Rice",
+      price: "15+",
+      description: "A fiery combination of aromatic rice, fresh vegetables, and your preferred protein, all generously coated in a spicy and bold Sichuan sauce. Choice of vegetables, chicken, shrimp or egg as the protein.",
+      subcategory: "Rice Items",
+      tags: ["Vegetarian", "Chicken", "Egg", "Shrimp", "Indo-Chinese"]
+    },
+    {
+      name: "Hakka Soft Noodles",
+      price: "15+",
+      description: "A classic stir-fry featuring noodles tossed with crisp, colorful vegetables, savory sauce, and choice of vegetables, chicken, shrimp or egg as the protein.",
+      subcategory: "Noodle Items",
+      tags: ["Vegetarian", "Chicken", "Egg", "Shrimp", "Indo-Chinese"]
+    },
+    {
+      name: "Shezwan Noodles ",
+      price: "15+",
+      description: "A delicious combination of silky noodles, crisp vegetables, spicy Szechuan peppers, and your choice of vegetables, chicken, shrimp or egg as protein, creating a flavorful and satisfying dish.",
+      subcategory: "Noodle Items",
+      tags: ["Vegetarian", "Chicken", "Egg", "Shrimp", "Indo-Chinese"]
     }
   ],
   naan: [
     {
-      name: "Butter Naan",
-      price: "4",
-      description: "Soft and fluffy traditional Indian bread brushed with butter.",
+      name: "Naan (Plain / Butter)",
+      price: "3",
+      description: "Freshly baked, soft and fluffy naan bread, cooked to perfection in a traditional tandoor oven, with a perfect balance of texture and flavor.",
       subcategory: "Naan",
-      tags: ["Bread", "Butter"]
+      tags: ["Bread"]
     },
     {
       name: "Garlic Naan",
-      price: "5",
-      description: "Aromatic naan bread topped with fresh garlic and cilantro.",
+      price: "4",
+      description: "Aromatic, soft, and golden naan bread, freshly baked in a traditional tandoor oven, infused with rich garlic flavors and a delightfully fluffy texture.",
       subcategory: "Naan",
       tags: ["Bread", "Garlic", "Popular"]
     },
     {
-      name: "Dosa (Plain/Onion/Masala/Cheese Masala/Ghee)",
-      price: "12",
-      description: "Rice and lentils, soaked and ground, fermented batter, rising unbound, dosa crisps, golden and browned. Served with sambar and chutney, flavor unbound.",
-      subcategory: "South Indian",
-      tags: ["Crispy", "Choice", "Traditional"]
+      name: "Bullet Naan",
+      price: "5",
+      description: "Freshly baked, soft and airy naan bread, delicately seasoned with sliced green chilies, perfectly cooked in a traditional tandoor oven for a unique blend of texture and flavor.",
+      subcategory: "Naan",
+      tags: ["Bread", "Garlic", "Spicy"]
     },
     {
-      name: "Spring Dosa",
-      price: "13",
-      description: "Spring dosa, crispy and light, stuffed with veggies, a flavorful bite.",
-      subcategory: "South Indian",
-      tags: ["Crispy", "Vegetarian"]
+      name: "Tandoori Roti (Plain / Butter)",
+      price: "4",
+      description: "Whole wheat flatbread, expertly baked in a traditional tandoor oven, resulting in a perfectly crisp exterior and soft, fluffy interior.",
+      subcategory: "Naan",
+      tags: ["Whole Wheat", "Vegetarian"]
+    },
+    {
+      name: "Paratha (Plain/Aloo)",
+      price: "4",
+      description: "Whole wheat flatbread stuffed with spiced potatoes (Aloo) or served plain, expertly baked in a traditional tandoor oven.",
+      subcategory: "Naan",
+      tags: ["Whole Wheat", "Vegetarian"]
+    },
+    {
+      name: "Onion Kulcha",
+      price: "5",
+      description: "A golden, flaky pastry bursting with rich, buttery layers and an irresistible blend of sweet and savory caramelized onions.",
+      subcategory: "Naan",
+      tags: ["Whole Wheat", "Vegetarian"]
+    },
+    {
+      name: "Cheese Naan",
+      price: "5",
+      description: "A warm, soft, and fluffy naan bread filled with cheese, baked to perfection in a traditional tandoor oven for an irresistible blend of smoky flavor and creamy richness.",
+      subcategory: "Naan",
+      tags: ["Bread", "Vegetarian"]
+    },
+    {
+      name: "Peshwari Naan",
+      price: "6",
+      description: "A heavenly blend of dry fruits and nuts stuffed in buttery naan for a perfect balance of flavor and texture.",
+      subcategory: "Naan",
+      tags: ["Bread", "Nuts", "Sweet"]
+    },
+    {
+      name: "Bread Basket",
+      price: "16",
+      description: "Choice of any four Breads.",
+      subcategory: "Naan",
+      tags: ["Choice", "Vegetarian"]
     }
   ],
   desserts: [
     {
-      name: "Gulab Jamun (2pcs)",
+      name: "Shrikhand",
       price: "6",
-      description: "Soft milk dumplings soaked in fragrant sugar syrup.",
-      subcategory: "Traditional",
-      tags: ["Sweet", "Popular"]
+      description: "A luxurious yogurt-based dessert, sweetened and infused with the warm, aromatic flavor of cardamom, creating a velvety smooth treat that melts with the first scoop.",
+      subcategory: "Desserts",
+      tags: ["Dairy", "Popular"]
     },
     {
-      name: "Kulfi",
-      price: "5",
-      description: "Traditional Indian ice cream with cardamom and pistachios.",
-      subcategory: "Traditional", 
+      name: "Apricot Delight",
+      price: "6",
+      description: "A delectable dessert blending juicy apricots' natural sweetness with almonds' creamy, nutty depth. A perfect balance of flavors and textures for a truly indulgent treat.",
+      subcategory: "Desserts", 
       tags: ["Cold", "Nuts"]
     },
     {
-      name: "Ras Malai (2pcs)",
-      price: "7",
-      description: "Soft cheese dumplings in sweet, thickened milk with cardamom.",
-      subcategory: "Traditional",
+      name: "Ras Malai",
+      price: "6",
+      description: "Soft, melt-in-your-mouth cheese dumplings immersed in a luscious, aromatic milk infused with cardamom, saffron, and a hint of rose, create the classic, indulgent dessert.",
+      subcategory: "Desserts",
       tags: ["Sweet", "Creamy"]
+    },
+    {
+      name: "Gajar ka halwa",
+      price: "6",
+      description: "A rich dessert of grated carrots simmered in milk and sugar, Infused with spices and topped with roasted dry fruits for perfect flavor.",
+      subcategory: "Desserts",
+      tags: ["Sweet", "Popular"]
+    },
+    {
+      name: "Rabri Gulab jamun",
+      price: "6",
+      description: "A delightful harmony of creamy, velvety milk and soft, aromatic dumplings offers an indulgently divine taste experience.",
+      subcategory: "Desserts", 
+      tags: ["Cold", "Nuts"]
     }
   ],
   veganjain: [
