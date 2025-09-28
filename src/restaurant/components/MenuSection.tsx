@@ -814,7 +814,7 @@ export const MenuSection = () => {
                 </div>
               ) : (
                 <div className="rounded-md bg-slate-50 border border-slate-200 p-3 text-slate-700 text-center text-sm">
-                  Please specify level of spiciness: Mild🌶️ Medium🌶️🌶️ Hot🌶️🌶️🌶️ Extra Hot🌶️🌶️🌶️🌶️
+                  Please specify level of spiciness: Mild-🌶️ | Medium-🌶️🌶️ | Hot-🌶️🌶️🌶️ | Extra Hot-🌶️🌶️🌶️🌶️
                   </div>
               )}
             </div>
