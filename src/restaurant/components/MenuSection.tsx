@@ -248,13 +248,6 @@ const menuItems = {
       tags: ["Popular", "Sea food"]
     },
     {
-      name: "Southern Chicken Vepudu",
-      price: "15",
-      description: "Tender chicken, marinated in spices’ embrace, A blend of red chilies, curry leaves, and flavor to trace.",
-      subcategory: "Appetizers",
-      tags: ["Chicken", "Grilled", "Premium"]
-    },
-    {
       name: "Canteen 65 (Gobi/Paneer/Chicken)",
       price: "15",
       description: "Deep-fried in spicy batter, a crispy delight. Tossed in tangy sauce, creamy and bright. Contains Dairy.",
