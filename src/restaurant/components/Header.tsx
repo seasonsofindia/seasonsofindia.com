@@ -79,7 +79,7 @@ export const Header = () => {
                   Carry-out Menu
                 </a>
                 <a
-                  href="https://sites.google.com/view/seasonsofindia-menuimages"
+                  href="https://seasonsmenus.s3.us-east-1.amazonaws.com/Seasons+of+India+Carry+Out+2026.pdf"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="block px-4 py-2 text-sm text-restaurant-light hover:text-primary transition-colors"
