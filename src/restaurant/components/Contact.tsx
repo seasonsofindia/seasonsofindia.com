@@ -10,7 +10,6 @@ export const Contact = () => {
       <div className="container mx-auto px-4">
         <div className="text-center mb-8">
           <h3 className="font-semibold mb-2">We Specialize in Indian, Mughalai, & Indo Chinese Cuisines.</h3>
-          <h3 className="font-semibold mb-2">We do not add MSG to our food.</h3>
           <h3 className="font-semibold mb-2">We serve Halal Meat.</h3>
           <h3 className="font-semibold mb-2">Please be advised that food prepared here may contain these ingredients: Milk, Egg, Wheat, Nuts and Fish.</h3>
           <h3 className="font-semibold mb-2">Entrée is served with a Side of Rice.</h3>
@@ -56,7 +55,7 @@ export const Contact = () => {
             <CardContent className="p-6">
               <Mail className="h-8 w-8 mx-auto mb-4 text-restaurant-primary" />
               <h3 className="font-semibold mb-2">Email</h3>
-              <p className="text-sm text-muted-foreground">seasonsofindia17@gmail.com</p>
+              <p className="text-sm text-muted-foreground">seasonsofindiaorlando@gmail.com</p>
             </CardContent>
           </Card>
         </div>
